@@ -60,7 +60,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-             --data "tag":"${{ steps.bump_version_major.outputs.next-version }}" \
+             --data '{"tag":"${{ steps.bump_version_major.outputs.next-version }}"}' \
              https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
             
           curl \
@@ -68,7 +68,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-             --data "tag":"${{ steps.bump_version_minor.outputs.next-version }}" \
+             --data '{"tag":"${{ steps.bump_version_minor.outputs.next-version }}"}' \
              https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
              
           curl \
@@ -76,5 +76,5 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
-             --data "tag":"${{ steps.bump_version_patch.outputs.next-version }}" \
+             --data '{"tag":"${{ steps.bump_version_patch.outputs.next-version }}"}' \
              https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
