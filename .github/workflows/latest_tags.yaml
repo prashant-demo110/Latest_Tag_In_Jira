@@ -61,7 +61,7 @@ jobs:
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
              --data '{"tag":"${{ steps.bump_version_major.outputs.next-version }}"}' \
-             https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
+             https://automation.atlassian.com/pro/hooks/72f9e3d181044494756c8a612866086ee0599148 
             
           curl \
             -X POST \
@@ -69,7 +69,7 @@ jobs:
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
              --data '{"tag":"${{ steps.bump_version_minor.outputs.next-version }}"}' \
-             https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
+             https://automation.atlassian.com/pro/hooks/72f9e3d181044494756c8a612866086ee0599148 
              
           curl \
             -X POST \
@@ -77,4 +77,4 @@ jobs:
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
              https://api.github.com/repos/$owner/$repo/releases \
              --data '{"tag":"${{ steps.bump_version_patch.outputs.next-version }}"}' \
-             https://automation.atlassian.com/pro/hooks/07e9fb25376397e9a7f714a03c076eb0abdc7f46 
+             https://automation.atlassian.com/pro/hooks/72f9e3d181044494756c8a612866086ee0599148
